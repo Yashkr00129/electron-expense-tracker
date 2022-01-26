@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.5/mousetrap.min.js"
+      integrity="sha512-+Jg3Ynmj9hse704K48H6rBBI3jdNBjReRGBCxUWFfOz3yVurnJFWtAWssDAsGtzWYw89xFWPxShuj2T6E9EOpg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      body {
+        display: block;
+      }
+      .container {
+        margin: 30px auto;
+        width: 350px;
+      }
+      .history-btn-group {
+        position: absolute;
+        width: 350px;
+        bottom: 17px;
+      }
+    </style>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="history-list">
+        <h3>History</h3>
+        <ul id="list" class="list">
+          <!-- <li class="minus">
+        Cash <span>-$400</span><button class="delete-btn">x</button>
+      </li> -->
+        </ul>
+      </div>
+      <div class="history-btn-group">
+        <button class="btn" onclick="deleteAll()">Delete All</button>
+        <a href="index.html" class="btn outlined">Go Back</a>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="keyboard.js"></script>
+    <script>
+      function deleteAll() {
+        if (window.confirm("Are you sure? This can not be undone!")) {
+          localStorage.clear();
+          location.reload();
+        }
+      }
+    </script>
+  </body>
+</html>
